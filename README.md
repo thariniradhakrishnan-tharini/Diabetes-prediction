@@ -72,5 +72,17 @@ It leverages **Machine Learning** and **Deep Learning** models to analyze health
 git clone https://github.com/your-username/diabetes-prediction.git
 cd diabetes-prediction
 
+```
+## Install Dependencies
+pip install -r requirements.txt
+---
+## Run Flash app
+python app.py
+---
+🖥 Web App Interface
+Input: Health parameters such as Pregnancies, Glucose, Blood Pressure, BMI, Age, etc.
+Output: "Has Diabetes" / "Does Not Have Diabetes" + Model Accuracy.
+
+---
 
 ## 📂 Folder Structure  
