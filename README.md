@@ -26,21 +26,6 @@ It leverages **Machine Learning** and **Deep Learning** models to analyze health
 
 ---
 
-## 📂 Folder Structure  
-
-diabetes-prediction/
-│
-├── app.py # Flask application entry point
-├── best_model.pkl # Saved best ML model
-├── diabetes.csv # Dataset used for training/testing
-├── requirements.txt # Python dependencies
-├── templates/ # HTML templates for the Flask app
-│ └── index1.html # Web app user interface
-├── README.md # Project documentation
-└── LICENSE # License file
-
----
-
 ## 🧠 Algorithms Used  
 - Logistic Regression  
 - Decision Tree Classifier  
