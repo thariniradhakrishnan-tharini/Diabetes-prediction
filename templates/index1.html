@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; padding: 0;
+            background-image: url("https://st4.depositphotos.com/7862542/38187/i/450/depositphotos_381875046-stock-photo-world-diabetes-day-november-blue.jpg"); }
+        h1 { text-align: center; margin-bottom: 20px; }
+        form { max-width: 600px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 7px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); background-color: rgba(255, 255, 255, 0.9); }
+        form input[type="text"], form button { width: 100%; padding: 10px; margin-bottom: 10px;
+            font-size: 16px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        form button { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        form button:hover { background-color: #45a049; }
+        #predictionResult, #accuracy { margin-top: 20px; padding: 20px; background: #fff;
+            border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9); }
+    </style>
+</head>
+<body>
+    <h1>Diabetes Prediction</h1>
+    <form id="predictionForm">
+        <label>Pregnancies</label><input type="text" name="Pregnancies" required>
+        <label>Glucose</label><input type="text" name="Glucose" required>
+        <label>BloodPressure</label><input type="text" name="BloodPressure" required>
+        <label>SkinThickness</label><input type="text" name="SkinThickness" required>
+        <label>Insulin</label><input type="text" name="Insulin" required>
+        <label>BMI</label><input type="text" name="BMI" required>
+        <label>DiabetesPedigreeFunction</label><input type="text" name="DiabetesPedigreeFunction" required>
+        <label>Age</label><input type="text" name="Age" required>
+        <button type="submit">Predict</button>
+    </form>
+    <div id="predictionResult"></div>
+    <div id="accuracy"></div>
+    <script>
+        const form = document.getElementById('predictionForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const response = await fetch('/predict', { method: 'POST', body: formData });
+            const result = await response.json();
+            const prediction = parseFloat(result.prediction);
+            document.getElementById('predictionResult').textContent =
+                prediction >= 0.5 ? 'THE PERSON HAS DIABETES' : 'THE PERSON DOES NOT HAVE DIABETES';
+            if (!isNaN(result.accuracy)) {
+                document.getElementById('accuracy').textContent = `Model Accuracy: ${result.accuracy.toFixed(2)}`;
+            }
+        });
+    </script>
+</body>
+</html>
