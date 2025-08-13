@@ -74,15 +74,15 @@ cd diabetes-prediction
 
 ```
 ## Install Dependencies
-pip install -r requirements.txt
+
+** pip install -r requirements.txt **
 ---
 ## Run Flash app
-python app.py
+
+** python app.py **
 ---
-🖥 Web App Interface
-Input: Health parameters such as Pregnancies, Glucose, Blood Pressure, BMI, Age, etc.
-Output: "Has Diabetes" / "Does Not Have Diabetes" + Model Accuracy.
+## 🖥 Web App Interface
+** Input: Health parameters such as Pregnancies, Glucose, Blood Pressure, BMI, Age, etc.**
+** Output: "Has Diabetes" / "Does Not Have Diabetes" + Model Accuracy.**
 
 ---
-
-## 📂 Folder Structure  
