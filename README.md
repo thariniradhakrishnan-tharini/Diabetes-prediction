@@ -25,26 +25,31 @@ It leverages **Machine Learning** and **Deep Learning** models to analyze health
 5. **Web Application** – Deploy Flask app for real-time predictions.  
 
 ---
-##├── app.py # Flask application
-├── best_model.pkl # Saved best model
-├── diabetes.csv # Dataset
-├── requirements.txt # Dependencies
-├── templates/
-│ └── index1.html # Frontend template
-└── README.md # Project documentation
 
+## 📂 Folder Structure  
+
+diabetes-prediction/
+│
+├── app.py # Flask application entry point
+├── best_model.pkl # Saved best ML model
+├── diabetes.csv # Dataset used for training/testing
+├── requirements.txt # Python dependencies
+├── templates/ # HTML templates for the Flask app
+│ └── index1.html # Web app user interface
+├── README.md # Project documentation
+└── LICENSE # License file
 
 ---
 
 ## 🧠 Algorithms Used  
-- **Logistic Regression**  
-- **Decision Tree Classifier**  
-- **Random Forest Classifier**  
-- **Gradient Boosting (XGBoost)**  
-- **Support Vector Machine (SVM)**  
-- **k-Nearest Neighbors (k-NN)**  
-- **Shallow Neural Network (MLP)**  
-- **Deep Neural Network**  
+- Logistic Regression  
+- Decision Tree Classifier  
+- Random Forest Classifier  
+- Gradient Boosting (XGBoost)  
+- Support Vector Machine (SVM)  
+- k-Nearest Neighbors (k-NN)  
+- Shallow Neural Network (MLP)  
+- Deep Neural Network  
 
 ---
 
@@ -65,24 +70,26 @@ It leverages **Machine Learning** and **Deep Learning** models to analyze health
 
 ---
 
-## 🚀 Installation & Usage  
+## 🚀 Installation & Running the Flask App  
 
 ### 1️⃣ Clone the Repository  
 ```bash
 git clone https://github.com/your-username/diabetes-prediction.git
 cd diabetes-prediction
-
 ```
-## Install Dependencies
-
-** pip install -r requirements.txt **
----
-## Run Flash app
-
-** python app.py **
----
-## 🖥 Web App Interface
-** Input: Health parameters such as Pregnancies, Glucose, Blood Pressure, BMI, Age, etc.**
-** Output: "Has Diabetes" / "Does Not Have Diabetes" + Model Accuracy.**
-
----
+### 2️⃣ Install Dependencies
+```bash
+pip install flask pandas numpy scikit-learn xgboost joblib scipy matplotlib seaborn
+```
+### Install from requirement.txt
+```bash
+pip install -r requirements.txt
+```
+### 3️⃣ Run the Flask App
+```bash
+python app.py
+```
+### 4️⃣ Access the Application
+```bash
+http://127.0.0.1:8080/
+```
